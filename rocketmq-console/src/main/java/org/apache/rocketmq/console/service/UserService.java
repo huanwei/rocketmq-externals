@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -14,10 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-namespace RocketMQ.Interop
-{
-    public static class ConstValues
-    {
-        public const string RocketMQDriverDllName = "rocketmq-client-cpp.dll";
-    }
+package org.apache.rocketmq.console.service;
+
+import org.apache.rocketmq.console.model.User;
+
+public interface UserService {
+    User queryByName(String name);
+
+    User queryByUsernameAndPassword(String username, String password);
 }
