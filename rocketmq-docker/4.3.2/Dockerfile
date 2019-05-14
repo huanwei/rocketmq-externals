@@ -70,6 +70,8 @@ ARG gid=3000
 RUN groupadd -g ${gid} ${group} \
     && useradd -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
+RUN chown -R 3000:3000 ${ROCKETMQ_HOME}/bin/
+
 USER ${user}
 
 WORKDIR ${ROCKETMQ_HOME}/bin
